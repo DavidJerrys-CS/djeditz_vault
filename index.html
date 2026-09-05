@@ -1,44 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DJEDITZ VAULT</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@800&family=Rajdhani:wght@700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJEDITZ VAULT - GLASS EDITION</title>
+<link rel="icon" href="./logo.jpg">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#05070a;color:#fff;font-family:'Rajdhani',sans-serif}
-.header{padding:22px;text-align:center;border-bottom:1px solid #00e5ff33;position:sticky;top:0;background:#05070acc;backdrop-filter:blur(10px)}
-.logo{font-family:'Orbitron';font-size:26px;font-weight:900;letter-spacing:2px}
-.logo span{color:#00e5ff;text-shadow:0 0 15px #00e5ff}
-.grid{padding:12px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.card{border-radius:18px;overflow:hidden;position:relative;aspect-ratio:9/12;background:#111;border:1px solid #ffffff12}
-.card img{width:100%;height:100%;object-fit:cover;object-position:top}
-.card:hover{border-color:#00e5ff;box-shadow:0 0 25px #00e5ff44}
-.ov{position:absolute;inset:0;background:linear-gradient(to top,#000 85%,transparent)}
-.info{position:absolute;bottom:0;left:0;right:0;padding:10px}
-.name{font-family:'Orbitron';font-size:11px;font-weight:800}
-.meta{font-size:9px;color:#00e5ff;margin-top:3px;text-transform:uppercase}
+body{background:#05080f;color:#fff;font-family:-apple-system,BlinkMacSystemFont,'SF Pro Display',sans-serif;min-height:100vh;overflow-x:hidden;position:relative}
+body::before{content:'';position:fixed;inset:0;background:url('./bg.jpg') center/cover no-repeat;opacity:0.22;filter:brightness(0.38) saturate(0.85) blur(0.5px);z-index:-3;}
+body::after{content:'';position:fixed;inset:0;z-index:-2;background: radial-gradient(800px circle at 15% 20%, rgba(120,119,198,0.28), transparent), radial-gradient(700px circle at 85% 15%, rgba(0,200,255,0.22), transparent), radial-gradient(900px circle at 50% 85%, rgba(255,42,109,0.16), transparent), linear-gradient(to bottom, rgba(5,8,15,0.55), rgba(5,8,15,0.92));}
+
+nav{position:fixed;top:14px;left:50%;transform:translateX(-50%);width:92%;max-width:1200px;padding:12px 22px;z-index:100;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.07);backdrop-filter:blur(30px) saturate(180%);-webkit-backdrop-filter:blur(30px) saturate(180%);border:1px solid rgba(255,255,255,0.12);border-radius:100px;box-shadow:0 8px 32px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.18);}
+.nav-logo{display:flex;align-items:center;gap:11px}
+.nav-logo img{width:36px;height:36px;border-radius:10px;object-fit:cover}
+.nav-logo span{font-size:13px;font-weight:800;letter-spacing:3px;background:linear-gradient(90deg,#fff,#8ec5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-pill{padding:8px 16px;border-radius:100px;background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.12);font-size:9px;letter-spacing:2.5px}
+
+.hero{min-height:92vh;display:flex;align-items:center;padding:110px 50px 60px;position:relative}
+.hero-text{max-width:620px}
+.hero-text h1{font-size:72px;font-weight:100;line-height:.88;letter-spacing:-3.5px}
+.hero-text h1 b{font-weight:900;background:linear-gradient(135deg,#ffffff 10%,#7ec8ff 35%,#a78bfa 65%,#ff3b7a 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;display:block}
+.hero-text .sub{margin-top:20px;font-size:12.5px;letter-spacing:2.2px;opacity:.6;line-height:1.7;font-weight:300}
+.btn-row{display:flex;gap:12px;margin-top:34px}
+.btn-glass{padding:14px 30px;border-radius:100px;text-decoration:none;color:#fff;font-size:10px;letter-spacing:3px;background:linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.05));backdrop-filter:blur(30px);border:1px solid rgba(255,255,255,0.18);box-shadow:0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.22);transition:.4s}
+.btn-glass:hover{transform:translateY(-2px)}
+.btn-glass.primary{background:linear-gradient(135deg,#fff,#d6eaff);color:#000;border-color:#fff}
+
+.section{padding:20px 28px 80px}
+.section-head{display:flex;align-items:center;gap:12px;margin-bottom:28px}
+.section-head img{width:30px;height:30px;border-radius:9px}
+.section-head span{font-size:10px;letter-spacing:4px;opacity:.7;background:linear-gradient(90deg,#fff,#8ec5ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.card{position:relative;aspect-ratio:4/5;border-radius:26px;overflow:hidden;text-decoration:none;display:block;background:linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.03));backdrop-filter:blur(26px) saturate(180%);-webkit-backdrop-filter:blur(26px) saturate(180%);border:1px solid rgba(255,255,255,0.13);box-shadow:0 10px 36px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.18);transition:all .55s cubic-bezier(0.16,1,0.3,1)}
+.card::before{content:'';position:absolute;inset:0;border-radius:26px;background:linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 55%);opacity:0;transition:.5s;z-index:2;pointer-events:none}
+.card:hover{transform:translateY(-9px) scale(1.015);box-shadow:0 22px 70px rgba(0,0,0,0.55), 0 0 45px rgba(120,180,255,0.18)}
+.card:hover::before{opacity:1}
+.card img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:.75s}
+.card:hover img{transform:scale(1.09)}
+.card-info{position:absolute;bottom:0;left:0;right:0;padding:18px;z-index:3;background:linear-gradient(to top, rgba(0,0,0,0.92) 15%, rgba(0,0,0,0.45) 60%, transparent 100%);backdrop-filter:blur(10px)}
+.card-name{font-size:11.5px;font-weight:700;letter-spacing:1.6px;color:#fff}
+.card-meta{font-size:8px;letter-spacing:2.2px;margin-top:5px;opacity:.9;background:linear-gradient(90deg,#7ec8ff,#b49fff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.badge{position:absolute;top:12px;left:12px;z-index:4;padding:5px 9px;border-radius:100px;font-size:7px;letter-spacing:1.8px;background:rgba(0,0,0,0.55);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.15)}
+
+footer{padding:40px 28px;text-align:center;opacity:.35;font-size:9px;letter-spacing:3px;border-top:1px solid rgba(255,255,255,0.06)}
+
+@media(max-width:1024px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:768px){.hero{padding:100px 20px 40px}.hero-text h1{font-size:46px}.grid{grid-template-columns:repeat(2,1fr);gap:12px}.section{padding:10px 12px 60px}.card{border-radius:20px}nav{width:96%;top:10px;padding:10px 16px}}
 </style>
 </head>
 <body>
-<div class="header"><div class="logo">DJEDITZ <span>VAULT</span></div></div>
+
+<nav>
+<div class="nav-logo"><img src="./logo.jpg"><span>DJEDITZ</span></div>
+<div class="nav-pill">VAULT • GLASS EDITION</div>
+</nav>
+
+<div class="hero">
+<div class="hero-text">
+<h1>THE <b>VAULT</b></h1>
+<div class="sub">APPLE LIQUID GLASS • GRADIENT MESH • CURATED 4K COLLECTION</div>
+<div class="btn-row">
+<a href="#vault" class="btn-glass primary">EXPLORE VAULT</a>
+<a href="https://instagram.com/djeditz" target="_blank" class="btn-glass">INSTAGRAM</a>
+</div>
+</div>
+</div>
+
+<div class="section" id="vault">
+<div class="section-head"><img src="./logo.jpg"><span>COLLECTION / GLASS VAULT</span></div>
 <div class="grid">
 
-<a class="card" href="YOUR_MEGA_LINK_GOJO" target="_blank">
-<img src="https://cdn.myanimelist.net/images/characters/16/400228.jpg">
-<div class="ov"></div><div class="info"><div class="name">GOJO SATORU</div><div class="meta">Six Eyes • Limitless</div></div>
-</a>
+<a class="card" href="https://mega.nz/folder/AEhAHQya#ENMmhN2N5AC6lqt5uCau_w"><span class="badge">VILLAIN</span><img src="./aizen.jpg"><div class="card-info"><div class="card-name">AIZEN SOSUKE</div><div class="card-meta">BLEACH</div></div></a>
+<a class="card" href="https://mega.nz/file/tcUHlYyD#PZ9LJoN2wX43s6Fl47-HMpMreU4Vs4NHl18o8UIeKvI"><span class="badge">MAIN</span><img src="./haikyu.jpg"><div class="card-info"><div class="card-name">HINATA SHOYO</div><div class="card-meta">HAIKYU!!</div></div></a>
+<a class="card" href="https://mega.nz/file/ddMFnLRR#-YwQIxgpR16lloJL23tHfV8Qfw-757gD-xTlblPQ8Wc"><span class="badge">MAIN</span><img src="./light.jpg"><div class="card-info"><div class="card-name">YAGAMI LIGHT</div><div class="card-meta">DEATH NOTE</div></div></a>
+<a class="card" href="https://mega.nz/folder/UnhAAJLR#eCoJPJmCrKPBwtTLzL61hQ"><span class="badge">MAIN</span><img src="./ichigo.jpg"><div class="card-info"><div class="card-name">KUROSAKI ICHIGO</div><div class="card-meta">BLEACH BANKAI</div></div></a>
+<a class="card" href="https://mega.nz/file/YcV0FQAY#whMqfi2Z4AgR6ePcpu7q-091s_0iJlNJjGK_oUtc7tg"><span class="badge">VILLAIN</span><img src="./geto.jpg"><div class="card-info"><div class="card-name">GETO SUGURU</div><div class="card-meta">JUJUTSU KAISEN</div></div></a>
+<a class="card" href="https://mega.nz/file/dckkUawT#7MbfEO6yWComXv7ZWwmePXzkKtf4GEBGW-cdy-D_v9E"><span class="badge">SIDE</span><img src="./yuki.jpg"><div class="card-info"><div class="card-name">YUKI TSUKUMO</div><div class="card-meta">SPECIAL GRADE</div></div></a>
+<a class="card" href="https://mega.nz/folder/1YABVBxb#M4tvnYQfYcaGhyKRpYV2BQ"><span class="badge">MAIN</span><img src="./yuta.jpg"><div class="card-info"><div class="card-name">YUTA OKKOTSU</div><div class="card-meta">JUJUTSU KAISEN 0</div></div></a>
+<a class="card" href="https://mega.nz/file/NNdhzJIT#X9hjonWm3hJg653ZGK9WbY68uApFcpdObK4y2l96viY"><span class="badge">MAIN</span><img src="./ayanakoji.jpg"><div class="card-info"><div class="card-name">AYANAKOJI</div><div class="card-meta">CLASSROOM ELITE</div></div></a>
 
-<a class="card" href="#"><img src="https://cdn.myanimelist.net/images/characters/15/548419.jpg"><div class="ov"></div><div class="info"><div class="name">SUNG JINWOO</div><div class="meta">Arise • Monarch</div></div></a>
-
-<a class="card" href="#"><img src="https://cdn.myanimelist.net/images/characters/9/582035.jpg"><div class="ov"></div><div class="info"><div class="name">EREN YEAGER</div><div class="meta">Founding Titan</div></div></a>
-
-<a class="card" href="#"><img src="https://cdn.myanimelist.net/images/characters/9/105421.jpg"><div class="ov"></div><div class="info"><div class="name">TANJIRO</div><div class="meta">Hinokami Kagura</div></div></a>
-
-<a class="card" href="#"><img src="https://cdn.myanimelist.net/images/characters/9/131317.jpg"><div class="ov"></div><div class="info"><div class="name">NARUTO</div><div class="meta">Nine Tails • Sage</div></div></a>
-
-<a class="card" href="#"><img src="https://cdn.myanimelist.net/images/characters/7/72533.jpg"><div class="ov"></div><div class="info"><div class="name">LUFFY</div><div class="meta">Gear 5 • Joyboy</div></div></a>
+<!-- Continue same format for remaining packs - no numbers -->
+<a class="card" href="#"><img src="./gojo.jpg"><div class="card-info"><div class="card-name">GOJO SATORU</div><div class="card-meta">JUJUTSU KAISEN</div></div></a>
+<a class="card" href="#"><img src="./luffy.jpg"><div class="card-info"><div class="card-name">MONKEY D LUFFY</div><div class="card-meta">ONE PIECE</div></div></a>
+<a class="card" href="#"><img src="./sukuna.jpg"><div class="card-info"><div class="card-name">RYOMEN SUKUNA</div><div class="card-meta">JUJUTSU KAISEN</div></div></a>
+<a class="card" href="#"><img src="./naruto.jpg"><div class="card-info"><div class="card-name">UZUMAKI NARUTO</div><div class="card-meta">NARUTO</div></div></a>
+<!-- Add rest same style -->
 
 </div>
+</div>
+
+<footer>© 2026 DJEDITZ • GLASS VAULT • GRADIENT EDITION</footer>
+
 </body>
 </html>
