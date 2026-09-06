@@ -13,7 +13,7 @@
     }
 
     body {
-      background: #080204 url('https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/bg.jpg') no-repeat center center fixed;
+      background: #080204 url('https://raw.githubusercontent.com/DavidJerrys-CS/djeditz_vault/refs/heads/main/aot_bg.jpeg') no-repeat center center fixed;
       background-size: cover;
       color: #fff;
       min-height: 100vh;
@@ -22,7 +22,7 @@
       position: relative;
     }
 
-    /* Dark Overlay for readability */
+    /* Dark Overlay for Readability */
     body::before {
       content: '';
       position: fixed;
@@ -56,9 +56,10 @@
       text-decoration: none;
     }
 
+    /* Cropped Circular Logo */
     .site-logo {
-      width: 45px;
-      height: 45px;
+      width: 48px;
+      height: 48px;
       border-radius: 50%;
       object-fit: cover;
       border: 2px solid #ff0033;
@@ -177,7 +178,7 @@
       margin: 0 auto;
     }
 
-    /* High-Tech Glass Card */
+    /* Card */
     .card {
       background: rgba(20, 5, 8, 0.4);
       backdrop-filter: blur(16px);
@@ -310,7 +311,7 @@
 
   <nav>
     <a href="index.html" class="logo-container">
-      <img src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/logo.jpg" alt="DJEDITZ Logo" class="site-logo" onerror="this.style.display='none'">
+      <img src="https://raw.githubusercontent.com/DavidJerrys-CS/djeditz_vault/refs/heads/main/logo.jpg" alt="DJEDITZ Logo" class="site-logo" onerror="this.style.display='none'">
       <span class="logo-text">DJEDITZ</span>
     </a>
     <ul class="nav-links">
@@ -341,47 +342,49 @@
   <div class="grid" id="characterGrid"></div>
 
   <script>
+    const baseUrl = "https://raw.githubusercontent.com/DavidJerrys-CS/djeditz_vault/refs/heads/main/";
+
     const characters = [
-      { name: "Gojo", role: "side", link: "https://mega.nz/folder/JNMWyZpa#VzTXnrcXAw3vDLnPLqhMww", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/gojo.jpg" },
-      { name: "Sung Jinwoo", role: "main", link: "https://mega.nz/file/wIdUAahD#q4sx5RMrGgp5kymPEEQUHkwwn5DMpFndkbUrWYJClt4", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/sung-jinwoo.jpg" },
-      { name: "Sukuna", role: "villain", link: "https://mega.nz/folder/o3BUGTKT#XTGcZAkynTD70IaCHSzqvw", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/sukuna.jpg" },
-      { name: "Eren Jaeger", role: "main", link: "https://mega.nz/folder/MdgwlZLY#NqW-YhY2d0SjskOkTjwoBA", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/eren-jaeger.jpg" },
-      { name: "Frieren", role: "main", link: "https://mega.nz/file/ENsGGTiB#UlW6iVcv5yRh7zCGar3pEQVQn-Th_TQj6_Y3QcKOkR0", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/frieren.jpg" },
-      { name: "Anime mix", role: "mix", link: "https://mega.nz/file/MMlB1RRa#fbNbdwOG-JsfI54Eo4-U_Lpw5znIwLT1LXQBeoxaHss", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/anime-mix.jpg" },
-      { name: "Toji", role: "villain", link: "https://mega.nz/file/wAMlnR7T#4uDKigMsBG2usRFYry7ugPfTVAIB_QFB6KWSZ9raABE", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/toji.jpg" },
-      { name: "Yuji Itadori", role: "main", link: "https://mega.nz/file/pJURyLzS#d_V0WTGj5b_9bneEmCHhHfELN-I_8FkFtRtxobTc6HE", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/yuji-itadori.jpg" },
-      { name: "Mikasa Ackerman", role: "side", link: "https://mega.nz/file/BBlwWZTa#m-MjN5Ew-pDNrTmqJWvOie9aI-PeONyPVXrQZ3OSGKM", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/mikasa-ackerman.jpg" },
-      { name: "Levi Ackerman", role: "side", link: "https://mega.nz/folder/1RQ03AAC#THkcRouVIEbp62DRJuSQyg", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/levi-ackerman.jpg" },
-      { name: "Cha Hae", role: "side", link: "https://mega.nz/file/JAEUEISS#6JNvNynrtwq5foIElx63RnYp2YJFiKLk_n-8lB6qdGI", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/cha-hae.jpg" },
-      { name: "Saitama", role: "main", link: "https://mega.nz/folder/1iJmRICR#HR8CS9bJc7SNvDxccxc-QA", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/saitama.jpg" },
-      { name: "Genos", role: "side", link: "https://mega.nz/folder/YIwAlTZR#JJHZEMRE-xwXJoc38HBt7Q", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/genos.jpg" },
-      { name: "Muzan", role: "villain", link: "https://mega.nz/file/cFFxhLyC#xOz4wVpaVqQ3hRicjctkCokXdqNiZyROTGDtxIUxBaI", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/muzan.jpg" },
-      { name: "Zenitsu", role: "side", link: "https://mega.nz/file/QAVQiSAT#i39FEd5wTyr9BcDQmEBUtFjM7dUX-3csBPZS6hAAafc", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/zenitsu.jpg" },
-      { name: "Rengoku", role: "side", link: "https://mega.nz/folder/4Z9hGB6S#c7rPeCzgYQIflzzrbSkpmw", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/rengoku.jpg" },
-      { name: "Akaza", role: "villain", link: "https://mega.nz/folder/4U8GlLhL#MgUVTGSZRrckZ5xp4rYnbg", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/akaza.jpg" },
-      { name: "Kamado Tanjiro", role: "main", link: "https://mega.nz/folder/RM0AxCSK#40XllGRx1Do0aLdKL1A", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/kamado-tanjiro.jpg" },
-      { name: "Loid Forger", role: "main", link: "https://mega.nz/folder/AjQDFTib#kWb1HzTU9Cnut7vofo1QOA", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/loid-forger.jpg" },
-      { name: "Anya Forger", role: "main", link: "https://mega.nz/folder/li4ljZZJ#-yD2z4iydPjdd2IvyQ_hKg", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/anya-forger.jpg" },
-      { name: "Yor Forger", role: "main", link: "https://mega.nz/file/NZ9ymIxQ#WC3NatyfymcwxMN6Grn8MjeKwNKtJYwjBDXn2mBl-zI", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/yor-forger.jpg" },
-      { name: "Ayanakoji", role: "main", link: "https://mega.nz/file/NNdhzJIT#X9hjonWm3hJg653ZGK9WbY68uApFcpdObK4y2l96viY", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/ayanakoji.jpg" },
-      { name: "Shadow", role: "main", link: "https://mega.nz/file/0EF00bDK#NemWyLuegCNMgW47h0FpJHHo4q9I8BKutBfNTxaE058", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/shadow.jpg" },
-      { name: "Luffy", role: "main", link: "https://mega.nz/file/4FMkxbKJ#QFjMeOB0crGJllEOUIkgexZxc5hUweEdoaQGTni_VmY", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/luffy.jpg" },
-      { name: "Igris", role: "side", link: "https://mega.nz/file/RQNSzb6C#5yHMzVgWJGt5baA593TpP43Z8GEx27mlmZpT2sQOcDQ", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/igris.jpg" },
-      { name: "Zoro", role: "side", link: "https://mega.nz/file/xV0wlQxZ#0YLPAqxjzor8Ur772nQKafx6GHlChfGUvNIXzVYi8U8", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/zoro.jpg" },
-      { name: "Shinobu", role: "side", link: "https://mega.nz/file/kY83xQ5K#v1knIT5o7oVhsfQkXGg0LDASQ0u98LPSu-TLc6wV5GI", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/shinobu.jpg" },
-      { name: "Boa Hancock", role: "side", link: "https://mega.nz/file/YNlQSBxR#4p_bRr7fcTzMXW1zN8wJiyLX1_sgXfRtGJCzVuD3K8M", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/boa-hancock.jpg" },
-      { name: "Utahime", role: "side", link: "https://mega.nz/file/dJ820bqC#JtEwoWAgd-cYfodohcNGIsZKRCZt8OBRWjxd6nzQc8w", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/utahime.jpg" },
-      { name: "Mei Mei", role: "side", link: "https://mega.nz/file/lJkEmIyZ#Ehvyh3Eh1jJQVaXK3jfrYaLDvXdbLCm5A5KXJu5DMGg", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/mei-mei.jpg" },
-      { name: "Makima", role: "side", link: "https://mega.nz/file/kQskkTyA#G0IFPSnPTjgJeSw3N121a8t27WGPd_Y1Ok6v9vIPQ54", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/makima.jpg" },
-      { name: "Mitsuri Kanroji", role: "side", link: "https://mega.nz/file/oElXUTTD#IjVjAPGAAVwMrGBMP6meXRb_A9b9jOTr9CL-bC2y7Uw", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/mitsuri-kanroji.jpg" },
-      { name: "Nobara Kugisaki", role: "side", link: "https://mega.nz/file/pIFzTJ5Y#D9Br0ivJeeZlm5wv7g2tU46-6WfClrbPCXLYJB7OD-4", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/nobara-kugisaki.jpg" },
-      { name: "Geto", role: "side", link: "https://mega.nz/file/YcV0FQAY#whMqfi2Z4AgR6ePcpu7q-091s_0iJlNJjGK_oUtc7tg", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/geto.jpg" },
-      { name: "Yuki Tsukumo", role: "side", link: "https://mega.nz/file/dckkUawT#7MbfEO6yWComXv7ZWwmePXzkKtf4GEBGW-cdy-D_v9E", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/yuki-tsukumo.jpg" },
-      { name: "Yuta Okkotsu", role: "side", link: "https://mega.nz/folder/1YABVBxb#M4tvnYQfYcaGhyKRpYV2BQ", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/yuta-okkotsu.jpg" },
-      { name: "Kurosaki Ichigo", role: "main", link: "https://mega.nz/folder/UnhAAJLR#eCoJPJmCrKPBwtTLzL61hQ", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/kurosaki-ichigo.jpg" },
-      { name: "Aizen Sosuke", role: "villain", link: "https://mega.nz/folder/AEhAHQya#ENMmhN2N5AC6lqt5uCau_w", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/aizen-sosuke.jpg" },
-      { name: "Haikyu!", role: "main", link: "https://mega.nz/file/tcUHlYyD#PZ9LJoN2wX43s6Fl47-HMpMreU4Vs4NHl18o8UIeKvI", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/haikyu.jpg" },
-      { name: "Yagami Light", role: "main", link: "https://mega.nz/file/ddMFnLRR#-YwQIxgpR16lloJL23tHfV8Qfw-757gD-xTlblPQ8Wc", img: "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/yagami-light.jpg" }
+      { name: "Gojo", role: "side", link: "https://mega.nz/folder/JNMWyZpa#VzTXnrcXAw3vDLnPLqhMww", img: baseUrl + "gojo.jpg" },
+      { name: "Sung Jinwoo", role: "main", link: "https://mega.nz/file/wIdUAahD#q4sx5RMrGgp5kymPEEQUHkwwn5DMpFndkbUrWYJClt4", img: baseUrl + "sung-jinwoo.jpg" },
+      { name: "Sukuna", role: "villain", link: "https://mega.nz/folder/o3BUGTKT#XTGcZAkynTD70IaCHSzqvw", img: baseUrl + "sukuna.jpg" },
+      { name: "Eren Jaeger", role: "main", link: "https://mega.nz/folder/MdgwlZLY#NqW-YhY2d0SjskOkTjwoBA", img: baseUrl + "eren-jaeger.jpg" },
+      { name: "Frieren", role: "main", link: "https://mega.nz/file/ENsGGTiB#UlW6iVcv5yRh7zCGar3pEQVQn-Th_TQj6_Y3QcKOkR0", img: baseUrl + "frieren.jpg" },
+      { name: "Anime mix", role: "mix", link: "https://mega.nz/file/MMlB1RRa#fbNbdwOG-JsfI54Eo4-U_Lpw5znIwLT1LXQBeoxaHss", img: baseUrl + "anime-mix.jpg" },
+      { name: "Toji", role: "villain", link: "https://mega.nz/file/wAMlnR7T#4uDKigMsBG2usRFYry7ugPfTVAIB_QFB6KWSZ9raABE", img: baseUrl + "toji.jpg" },
+      { name: "Yuji Itadori", role: "main", link: "https://mega.nz/file/pJURyLzS#d_V0WTGj5b_9bneEmCHhHfELN-I_8FkFtRtxobTc6HE", img: baseUrl + "yuji-itadori.jpg" },
+      { name: "Mikasa Ackerman", role: "side", link: "https://mega.nz/file/BBlwWZTa#m-MjN5Ew-pDNrTmqJWvOie9aI-PeONyPVXrQZ3OSGKM", img: baseUrl + "mikasa-ackerman.jpg" },
+      { name: "Levi Ackerman", role: "side", link: "https://mega.nz/folder/1RQ03AAC#THkcRouVIEbp62DRJuSQyg", img: baseUrl + "levi-ackerman.jpg" },
+      { name: "Cha Hae", role: "side", link: "https://mega.nz/file/JAEUEISS#6JNvNynrtwq5foIElx63RnYp2YJFiKLk_n-8lB6qdGI", img: baseUrl + "cha-hae.jpg" },
+      { name: "Saitama", role: "main", link: "https://mega.nz/folder/1iJmRICR#HR8CS9bJc7SNvDxccxc-QA", img: baseUrl + "saitama.jpg" },
+      { name: "Genos", role: "side", link: "https://mega.nz/folder/YIwAlTZR#JJHZEMRE-xwXJoc38HBt7Q", img: baseUrl + "genos.jpg" },
+      { name: "Muzan", role: "villain", link: "https://mega.nz/file/cFFxhLyC#xOz4wVpaVqQ3hRicjctkCokXdqNiZyROTGDtxIUxBaI", img: baseUrl + "muzan.jpg" },
+      { name: "Zenitsu", role: "side", link: "https://mega.nz/file/QAVQiSAT#i39FEd5wTyr9BcDQmEBUtFjM7dUX-3csBPZS6hAAafc", img: baseUrl + "zenitsu.jpg" },
+      { name: "Rengoku", role: "side", link: "https://mega.nz/folder/4Z9hGB6S#c7rPeCzgYQIflzzrbSkpmw", img: baseUrl + "rengoku.jpg" },
+      { name: "Akaza", role: "villain", link: "https://mega.nz/folder/4U8GlLhL#MgUVTGSZRrckZ5xp4rYnbg", img: baseUrl + "akaza.jpg" },
+      { name: "Kamado Tanjiro", role: "main", link: "https://mega.nz/folder/RM0AxCSK#40XllGRx1Do0aLdKL1A", img: baseUrl + "kamado-tanjiro.jpg" },
+      { name: "Loid Forger", role: "main", link: "https://mega.nz/folder/AjQDFTib#kWb1HzTU9Cnut7vofo1QOA", img: baseUrl + "loid-forger.jpg" },
+      { name: "Anya Forger", role: "main", link: "https://mega.nz/folder/li4ljZZJ#-yD2z4iydPjdd2IvyQ_hKg", img: baseUrl + "anya-forger.jpg" },
+      { name: "Yor Forger", role: "main", link: "https://mega.nz/file/NZ9ymIxQ#WC3NatyfymcwxMN6Grn8MjeKwNKtJYwjBDXn2mBl-zI", img: baseUrl + "yor-forger.jpg" },
+      { name: "Ayanakoji", role: "main", link: "https://mega.nz/file/NNdhzJIT#X9hjonWm3hJg653ZGK9WbY68uApFcpdObK4y2l96viY", img: baseUrl + "ayanakoji.jpg" },
+      { name: "Shadow", role: "main", link: "https://mega.nz/file/0EF00bDK#NemWyLuegCNMgW47h0FpJHHo4q9I8BKutBfNTxaE058", img: baseUrl + "shadow.jpg" },
+      { name: "Luffy", role: "main", link: "https://mega.nz/file/4FMkxbKJ#QFjMeOB0crGJllEOUIkgexZxc5hUweEdoaQGTni_VmY", img: baseUrl + "luffy.jpg" },
+      { name: "Igris", role: "side", link: "https://mega.nz/file/RQNSzb6C#5yHMzVgWJGt5baA593TpP43Z8GEx27mlmZpT2sQOcDQ", img: baseUrl + "igris.jpg" },
+      { name: "Zoro", role: "side", link: "https://mega.nz/file/xV0wlQxZ#0YLPAqxjzor8Ur772nQKafx6GHlChfGUvNIXzVYi8U8", img: baseUrl + "zoro.jpg" },
+      { name: "Shinobu", role: "side", link: "https://mega.nz/file/kY83xQ5K#v1knIT5o7oVhsfQkXGg0LDASQ0u98LPSu-TLc6wV5GI", img: baseUrl + "shinobu.jpg" },
+      { name: "Boa Hancock", role: "side", link: "https://mega.nz/file/YNlQSBxR#4p_bRr7fcTzMXW1zN8wJiyLX1_sgXfRtGJCzVuD3K8M", img: baseUrl + "boa-hancock.jpg" },
+      { name: "Utahime", role: "side", link: "https://mega.nz/file/dJ820bqC#JtEwoWAgd-cYfodohcNGIsZKRCZt8OBRWjxd6nzQc8w", img: baseUrl + "utahime.jpg" },
+      { name: "Mei Mei", role: "side", link: "https://mega.nz/file/lJkEmIyZ#Ehvyh3Eh1jJQVaXK3jfrYaLDvXdbLCm5A5KXJu5DMGg", img: baseUrl + "mei-mei.jpg" },
+      { name: "Makima", role: "side", link: "https://mega.nz/file/kQskkTyA#G0IFPSnPTjgJeSw3N121a8t27WGPd_Y1Ok6v9vIPQ54", img: baseUrl + "makima.jpg" },
+      { name: "Mitsuri Kanroji", role: "side", link: "https://mega.nz/file/oElXUTTD#IjVjAPGAAVwMrGBMP6meXRb_A9b9jOTr9CL-bC2y7Uw", img: baseUrl + "mitsuri-kanroji.jpg" },
+      { name: "Nobara Kugisaki", role: "side", link: "https://mega.nz/file/pIFzTJ5Y#D9Br0ivJeeZlm5wv7g2tU46-6WfClrbPCXLYJB7OD-4", img: baseUrl + "nobara-kugisaki.jpg" },
+      { name: "Geto", role: "side", link: "https://mega.nz/file/YcV0FQAY#whMqfi2Z4AgR6ePcpu7q-091s_0iJlNJjGK_oUtc7tg", img: baseUrl + "geto.jpg" },
+      { name: "Yuki Tsukumo", role: "side", link: "https://mega.nz/file/dckkUawT#7MbfEO6yWComXv7ZWwmePXzkKtf4GEBGW-cdy-D_v9E", img: baseUrl + "yuki-tsukumo.jpg" },
+      { name: "Yuta Okkotsu", role: "side", link: "https://mega.nz/folder/1YABVBxb#M4tvnYQfYcaGhyKRpYV2BQ", img: baseUrl + "yuta-okkotsu.jpg" },
+      { name: "Kurosaki Ichigo", role: "main", link: "https://mega.nz/folder/UnhAAJLR#eCoJPJmCrKPBwtTLzL61hQ", img: baseUrl + "kurosaki-ichigo.jpg" },
+      { name: "Aizen Sosuke", role: "villain", link: "https://mega.nz/folder/AEhAHQya#ENMmhN2N5AC6lqt5uCau_w", img: baseUrl + "aizen-sosuke.jpg" },
+      { name: "Haikyu!", role: "main", link: "https://mega.nz/file/tcUHlYyD#PZ9LJoN2wX43s6Fl47-HMpMreU4Vs4NHl18o8UIeKvI", img: baseUrl + "haikyu.jpg" },
+      { name: "Yagami Light", role: "main", link: "https://mega.nz/file/ddMFnLRR#-YwQIxgpR16lloJL23tHfV8Qfw-757gD-xTlblPQ8Wc", img: baseUrl + "yagami-light.jpg" }
     ];
 
     function renderCards(data) {
