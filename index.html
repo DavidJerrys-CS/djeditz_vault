@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JERRY | DJEDITZ</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#000;color:#fff;font-family:'Inter',sans-serif;overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;height:70px;background:rgba(0,0,0,0.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.1);display:flex;justify-content:space-between;align-items:center;padding:0 5%;z-index:100}
+.logo{display:flex;align-items:center;gap:10px;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:22px;letter-spacing:2px}
+.logo img{width:38px;height:38px;border-radius:50%;object-fit:cover;border:1.5px solid #ff2d2d}
+.hero{height:100vh;width:100%;background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('bg.jpg');background-size:cover;background-position:center;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:20px}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(40px, 10vw, 110px);font-weight:800;line-height:0.9;background:linear-gradient(180deg,#fff 30%, #7ea8ff 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-2px}
+.hero p{margin-top:20px;color:rgba(255,255,255,0.6);font-size:18px;letter-spacing:3px;text-transform:uppercase}
+.btn{margin-top:35px;padding:14px 32px;background:#fff;color:#000;border-radius:100px;text-decoration:none;font-weight:700;font-size:14px;letter-spacing:1px;transition:0.3s}
+.btn:hover{transform:scale(1.05);box-shadow:0 0 30px rgba(255,255,255,0.4)}
+.grid{padding:80px 5%;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;background:#050505}
+.card{position:relative;height:380px;border-radius:24px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,0.08);transition:0.4s}
+.card:hover{transform:translateY(-8px);border-color:rgba(255,255,255,0.2);box-shadow:0 20px 40px rgba(0,0,0,0.5)}
+.card img{width:100%;height:100%;object-fit:cover;opacity:0.8;transition:0.4s}
+.card:hover img{opacity:1;transform:scale(1.05)}
+.card-info{position:absolute;bottom:0;width:100%;padding:20px;background:linear-gradient(transparent, rgba(0,0,0,0.9))}
+.card-info h3{font-family:'Space Grotesk',sans-serif;font-size:20px}
+.card-info span{font-size:12px;color:rgba(255,255,255,0.5);letter-spacing:2px}
+footer{padding:40px;text-align:center;color:rgba(255,255,255,0.3);font-size:13px;letter-spacing:2px;border-top:1px solid rgba(255,255,255,0.05)}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo"><img src="logo.jpg" alt="logo">JERRY</div>
+<div style="font-size:12px;letter-spacing:3px;opacity:0.5">DJEDITZ</div>
+</nav>
+
+<div class="hero">
+<h1>ANIME<br>IS ART</h1>
+<p>Crafted by Jerry • Sivakasi</p>
+<a href="#work" class="btn">EXPLORE EDITS</a>
+</div>
+
+<div class="grid" id="work">
+<div class="card"><img src="aizen.jpg"><div class="card-info"><h3>AIZEN</h3><span>BLEACH</span></div></div>
+<div class="card"><img src="gojo.jpg"><div class="card-info"><h3>GOJO</h3><span>JUJUTSU KAISEN</span></div></div>
+<div class="card"><img src="haikyu.jpg"><div class="card-info"><h3>HAIKYUU</h3><span>VOLLEYBALL</span></div></div>
+<div class="card"><img src="light.jpg"><div class="card-info"><h3>LIGHT</h3><span>DEATH NOTE</span></div></div>
+<div class="card"><img src="naruto.jpg"><div class="card-info"><h3>NARUTO</h3><span>SHIPPUDEN</span></div></div>
+<div class="card"><img src="luffy.jpg"><div class="card-info"><h3>LUFFY</h3><span>ONE PIECE</span></div></div>
+</div>
+
+<footer>© 2026 JERRY • DJEDITZ • MADE WITH LOVE FROM SIVAKASI</footer>
+
+</body>
+</html>
