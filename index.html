@@ -15,12 +15,12 @@
 body {
   background: #080204;
   color: #fff;
-  min-height: 120vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 1rem;
+  justify-content: flex-start; /* Keeps layout aligned to the top */
+  padding: 0.5rem 1rem 1.5rem 1rem; /* Reduced top padding */
   position: relative;
   overflow-x: hidden;
 }
@@ -115,7 +115,7 @@ nav {
 .hero {
   text-align: center;
   max-width: 800px;
-  margin: 3rem 0;
+  margin: 1rem 0; /* Reduced margin to shift text up */
   padding: 0 0.5rem;
 }
 
@@ -185,7 +185,7 @@ nav {
 footer {
   color: #665255;
   font-size: 0.85rem;
-  margin-top: 2rem;
+  margin-top: auto; /* Pushes footer to the bottom */
   text-align: center;
 }
 
@@ -210,7 +210,7 @@ footer {
   }
 
   .hero {
-    margin: 2rem 0;
+    margin: 1rem 0; /* Tightened gap for mobile screens */
   }
 
   .hero h1 {
