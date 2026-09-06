@@ -15,7 +15,7 @@
 body {
   background: #080204;
   color: #fff;
-  min-height: 120vh; /* Added extra height to guarantee page scrollability */
+  min-height: 120vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -239,6 +239,7 @@ footer {
   <source src="https://raw.githubusercontent.com/DavidJerrys-CS/djeditz_vault/refs/heads/main/aot_visuals2.mp4" type="video/mp4">
 </video>
 
+<!-- Background Audio Element -->
 <audio id="bgAudio" loop preload="auto">
   <source src="https://raw.githubusercontent.com/DavidJerrys-CS/djeditz_vault/refs/heads/main/aot.mp3" type="audio/mpeg">
 </audio>
@@ -250,14 +251,14 @@ footer {
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="twixtor.html">Anime Twixtor Clips</a></li>
+    <li><a href="twixtor.html" target="_blank" rel="noopener noreferrer">Anime Twixtor Clips</a></li>
   </ul>
 </nav>
 
 <main class="hero">
   <h1>Welcome to DJEDITZ</h1>
   <p>The ultimate high-tech hub for video editors. Access high-quality anime twixtor clips, raw materials, and resources designed to level up your editing experience.</p>
-  <a href="twixtor.html" class="cta-btn">Explore Twixtor Clips</a>
+  <a href="twixtor.html" target="_blank" rel="noopener noreferrer" class="cta-btn">Explore Twixtor Clips</a>
   <br>
   <a href="https://instagram.com/dj_editz.17" target="_blank" class="insta-banner">
     Follow @dj_editz.17 on Instagram
@@ -298,7 +299,6 @@ function playOnScroll() {
 
   audio.play().then(() => {
     isPlaying = true;
-    // Remove listeners once audio starts playing successfully
     window.removeEventListener('scroll', playOnScroll);
     window.removeEventListener('wheel', playOnScroll);
     document.removeEventListener('touchmove', playOnScroll);
@@ -307,7 +307,6 @@ function playOnScroll() {
   });
 }
 
-// Attach listeners specifically for page scrolling and mouse wheel movement
 window.addEventListener('scroll', playOnScroll, { passive: true });
 window.addEventListener('wheel', playOnScroll, { passive: true });
 document.addEventListener('touchmove', playOnScroll, { passive: true });
